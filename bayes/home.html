@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Malaria Prediction System</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Malaria Prediction System</title>
+    <!-- Tell the browser to be responsive to screen width -->
+    <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+    <!-- Bootstrap 3.3.6 -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css">
+
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-beta/css/bootstrap.min.css'>
+    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css'>
+    <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Roboto'>
+    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-3 col-md-2"></div>
+            <div class="col-lg-6 col-md-8 login-box">
+
+
+                <h1>Malaria Prediction System</h1>
+
+                <div class="container">
+
+                    <form id="predictionForm">
+                        <label for="exampleFormControlInput1" class="badge badge-primary">Name:</label>
+
+                        <input type="text" class="form-control" id="name" required>
+
+                        <label for="age" for="exampleFormControlInput1" class="badge badge-primary">Age:</label>
+
+                        <input type="number" id="age" class="form-control" required onchange="toggleFieldset()">
+
+                        <label for="address" class="badge badge-primary">Address:</label>
+                        <input type="text" id="address" class="form-control" required>
+                        <h2>Symptoms:</h2>
+                        <p>(Select all that apply)</p>
+                        <!-- Children Symptoms -->
+                        <fieldset id="children">
+                            <legend>Children below 19 Years</legend>
+                            <input type="checkbox" id="childFever" value="Fever">
+                            <label for="childFever">Fever</label><br>
+                            <input type="checkbox" id="cough" value="Cough">
+                            <label for="cough">Cough</label><br>
+                            <input type="checkbox" id="vomiting" value="Vomiting">
+                            <label for="vomiting">Vomiting</label><br>
+                            <input type="checkbox" id="diarrhea" value="Diarrhea">
+                            <label for="diarrhea">Diarrhea</label><br>
+                            <input type="checkbox" id="convulsions" value="Convulsions">
+                            <label for="convulsions">Convulsions</label><br>
+                            <input type="checkbox" id="posturing" value="Posturing">
+                            <label for="posturing">Posturing</label><br>
+                            <input type="checkbox" id="prostration" value="Prostration/Obtundation">
+                            <label for="prostration">Prostration/Obtundation</label><br>
+                            <input type="checkbox" id="jaundice" value="Jaundice">
+                            <label for="jaundice">Jaundice</label><br>
+                            <input type="checkbox" id="hypoglycemia" value="Hypoglycemia">
+                            <label for="hypoglycemia">Hypoglycemia</label><br>
+                            <input type="checkbox" id="acidosis" value="Metabolic Acidosis">
+                            <label for="acidosis">Metabolic Acidosis</label><br>
+                            <input type="checkbox" id="renalFailure" value="Renal Failure">
+                            <label for="renalFailure">Renal Failure</label><br>
+                            <input type="checkbox" id="severeAnemia" value="Severe Anemia">
+                            <label for="severeAnemia">Severe Anemia</label><br>
+                            <input type="checkbox" id="hyperparasitemia" value="Hyperparasitemia">
+                            <label for="hyperparasitemia">Hyperparasitemia</label><br>
+                            <input type="checkbox" id="respiratoryDistress" value="Respiratory Distress">
+                            <label for="respiratoryDistress">Respiratory Distress</label><br>
+                            <input type="checkbox" id="neurologicalSequelae" value="Neurological Sequelae">
+                            <label for="neurologicalSequelae">Neurological Sequelae</label><br>
+                            <input type="checkbox" id="bleedingDisturbances" value="Bleeding/Clotting Disturbances">
+                            <label for="bleedingDisturbances">Bleeding/Clotting Disturbances</label><br>
+                            <input type="checkbox" id="bacterialInfection" value="Rare Invasive Bacterial Infection">
+                            <label for="bacterialInfection">Rare Invasive Bacterial Infection</label><br>
+                            <input type="checkbox" id="pulmonaryEdema" value="Pulmonary Edema">
+                            <label for="pulmonaryEdema">Pulmonary Edema</label><br>
+                            <input type="checkbox" id="enlargedLiver" value="Enlarged Liver">
+                            <label for="enlargedLiver">Enlarged Liver</label><br>
+                            <input type="checkbox" id="feelingUnwell" value="General Feeling of Being Unwell">
+                            <label for="feelingUnwell">General Feeling of Being Unwell</label><br>
+                        </fieldset>
+
+                        <!-- Adult Symptoms -->
+                        <span class="border border-primary">
+                        <fieldset id="adult">
+                            <legend>Adult above 19 years</legend>
+                            <input type="checkbox" id="adultFever" value="Fever">
+                            <label for="adultFever">Fever</label><br>
+                            <input type="checkbox" id="chills" value="Chills">
+                            <label for="chills">Chills</label><br>
+                            <input type="checkbox" id="sweats" value="Sweats">
+                            <label for="sweats">Sweats</label><br>
+                            <input type="checkbox" id="headaches" value="Headaches">
+                            <label for="headaches">Headaches</label><br>
+                            <input type="checkbox" id="nausea" value="Nausea">
+                            <label for="nausea">Nausea</label><br>
+                            <input type="checkbox" id="vomiting" value="Vomiting">
+                            <label for="vomiting">Vomiting</label><br>
+                            <input type="checkbox" id="bodyAches" value="Body Aches">
+                            <label for="bodyAches">Body Aches</label><br>
+                            <input type="checkbox" id="weakness1" value="Weakness">
+                            <label for="weakness1">Weakness</label><br>
+                            <input type="checkbox" id="enlargedSpleen" value="Enlarged Spleen">
+                            <label for="enlargedSpleen">Enlarged Spleen</label><br>
+                            <input type="checkbox" id="mildJaundice" value="Mild Jaundice">
+                            <label for="mildJaundice">Mild Jaundice</label><br>
+                            <input type="checkbox" id="elevatedTemperatures" value="Elevated Temperatures">
+                            <label for="elevatedTemperatures">Elevated Temperatures</label><br>
+                            <input type="checkbox" id="perspiration" value="Perspiration">
+                            <label for="perspiration">Perspiration</label><br>
+                            <input type="checkbox" id="weakness2" value="Weakness">
+                            <label for="weakness2">Weakness</label><br>
+                            <input type="checkbox" id="enlargedLiver" value="Enlargement of the Liver">
+                            <label for="enlargedLiver">Enlargement of the Liver</label><br>
+                            <input type="checkbox" id="increasedRespiratoryRate" value="Increased Respiratory Rate">
+                            <label for="increasedRespiratoryRate">Increased Respiratory Rate</label><br>
+                            <input type="checkbox" id="severeAnemia" value="Severe Anemia">
+                            <label for="severeAnemia">Severe Anemia</label><br>
+                            <input type="checkbox" id="hypoglycemia" value="Hypoglycemia">
+                            <label for="hypoglycemia">Hypoglycemia</label><br>
+                            <input type="checkbox" id="acidosis" value="Acidosis">
+                            <label for="acidosis">Acidosis</label><br>
+                            <input type="checkbox" id="renalImpairment" value="Renal Impairment">
+                            <label for="renalImpairment">Renal Impairment</label><br>
+                            <input type="checkbox" id="hyperlactatemia" value="Hyperlactatemia">
+                            <label for="hyperlactatemia">Hyperlactatemia</label><br>
+                        </fieldset>
+                    </span>
+                        <button type="submit" class="btn btn-outline-success">Predict</button>
+                        <button type="submit" class="btn btn-outline-danger" id="logoutBtn">Logout</button>
+                    </form>
+
+                    <div class="card mt-5">
+                        <div class="card-body">
+
+                            <h5 class="card-title">Malaria Prediction Result</h5>
+
+                            <div class="alert alert-success" role="alert" id="result">
+
+                            </div>
+
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+
+    <hr>
+    <br><br>
+    <footer class="footer py-4">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-2">
+
+                    <p>Email:<br> info@Dr-Basit.com</p>
+                    <p>Phone:<br> +234 7030 923 324</p>
+                </div>
+                <div class="col-lg-4">
+                    <h5>Quick Links</h5>
+                    <ul class="list-unstyled">
+
+                        <li>
+                            <span class="border border-success"><a href="../bayes/prevention.html">How to prevent Malaria</a></span>
+                        </li>
+
+                        <li><a href="https://wa.link/zh6itq">Contact me</a></li>
+
+                    </ul>
+                </div>
+
+                <div class="col-lg-4">
+                    <h5>Connect on WhatsApp</h5>
+                    <p>Get in touch with us on WhatsApp for instant support</p>
+                    <a href="https://wa.link/zh6itq"><button type="button" class="btn btn-light"><i class="fab fa-whatsapp"></i> Chat Now</button></a>
+                </div>
+
+            </div>
+        </div>
+        <div class="text-center  text-white mt-3">
+            <p>All rights reserved &copy; 2024 Malaria Prediction System || Bello Abdulbasit Onoruoiza</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
